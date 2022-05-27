@@ -14,7 +14,6 @@ if __name__ == '__main__':
     date_photo = vk_client.photo_get(vk_id)['response']['items']
     name_photo_dict = {}
     photo_list = []
-
     for photo in date_photo:
         name_photo_dict[photo['likes']['count']] = max(photo['sizes'], key=lambda s: s['width'] * ['height'])['url']
         photo_list.append({"file_name": f"{photo['likes']['count']}.jpg", 'size': photo['sizes'][-1]['type']})
