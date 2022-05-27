@@ -19,6 +19,6 @@ if __name__ == '__main__':
         photo_list.append({"file_name": f"{photo['likes']['count']}.jpg", 'size': photo['sizes'][-1]['type']})
     uploader.dir_inst(vk_id)
     with open(info, 'w') as outfile:
-        json.dump(photo_list,outfile)
+        json.dump(photo_list, outfile)
     for key, value in tqdm(name_photo_dict.items()):
         uploader.upload(f'{vk_id}/{key}', value)
